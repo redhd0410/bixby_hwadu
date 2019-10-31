@@ -1,0 +1,4 @@
+enum (Wear) {
+  description (옷차림 검색)
+  symbol (wear)
+}

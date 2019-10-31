@@ -1,0 +1,104 @@
+structure (WeatherInfo) {
+  description (날씨 정보)
+  
+  property (condition) {
+    type (Condition)
+    min (Required) max (One)
+  }
+
+  property (TC) {
+    type (TC)
+    min (Optional) max (One)
+  }
+
+  property (feelsLike) {
+    type (FeelsLike)
+    min (Optional) max (One)
+  }
+
+  property (fineDust) {
+    type (FineDust)
+    min (Optional) max (One)
+  }
+
+  property (fineDustImage){
+    type (FineDustImage)
+    min (Optional) max (One)
+  }
+
+  property (wind) {
+    type (Wind)
+    min (Optional) max (One)
+  }
+
+  property (rain) {
+    type (Rain)
+    min (Optional) max (One)
+  }
+
+  property (humidity) {
+    type (Humidity)
+    min (Optional) max (One)
+  }
+
+  property (TMin) {
+    type (TMin)
+    min (Required) max (One)
+  }
+
+  property (TMax) {
+    type (TMax)
+    min (Required) max (One)
+  }
+
+  property (humidex) {
+    type (Humidex)
+    min (Optional) max (One)
+  }
+
+  property (UV) {
+    type (UV)
+    min (Optional) max (One)
+  }
+
+  property (yesMax) {
+    type(yesMax)
+    min (Optional) max(One)
+  }
+  
+  property (yesMin) {
+    type(yesMin)
+    min (Optional) max (One)
+  }
+
+  property (alert) {
+    type(Alert)
+    min(Optional) max (One)
+  }
+
+  property(today) {
+    type(Today)
+    min(Optional) max (One)
+  }
+
+  property(weatherUrl) {
+    type(WeatherUrl)
+    min (Required) max (One)
+  }
+
+  property(attireInfo) {
+    type(AttireInfo)
+    min (Required) max(One)
+  }
+
+  property(checkListInfo) {
+    type(CheckListInfo)
+    min (Required) max(Many)
+  }
+
+  property (template){
+    type (Template)
+    min (Optional) max (One)
+  }
+
+}

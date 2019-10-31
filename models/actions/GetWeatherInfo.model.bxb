@@ -1,0 +1,42 @@
+action (GetWeatherInfo) {
+  description (날씨 정보를 가져옵니다.)
+  type(Search)
+  collect {
+    input (weather) {
+      type (Weather)
+      min (Required) max (One)
+    }
+    input (date) {
+      type(Date)
+      min(Optional) max(One)
+    }
+    input (location) {
+      type (geo.NamedPoint)
+      min (Optional) max (One)
+      default-select{
+        with-rule{
+          select-first
+        }
+      }
+    }
+    input (checkListInfo) {
+      type(CheckListInfo)
+      min(Optional) max(One)
+    }
+    computed-input (point) {
+      min (Required) max(One)
+      type (Point)
+
+      compute {
+        if ($user.currentLocation.$exists) {
+          intent {
+            goal: geo.CurrentLocation
+            value-set: geo.CurrentLocation { $expr ($user.currentLocation) }
+            route: geo.CurrentLocation
+          } 
+        }
+      }
+    }
+  }
+  output (WeatherInfo)
+}

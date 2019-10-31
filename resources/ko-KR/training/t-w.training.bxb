@@ -1,0 +1,5 @@
+train (t-wzyqfnthkxizl6bf2wsnwu66v) {
+  utterance ("[g:WeatherInfo] (내일)[v:Date:tomorrow] (날씨)[v:Weather:weather]에 맞는 (준비물)[v:CheckList] 알려줘")
+  plan (Y2BlkMkoT0wp1StILUpLTS5JSazUC09NLMlILfLMS8tnUMeQdU8tCcnPzS8qyi9HViiFodA5IzU52yezuIRBFEPOJbEklUECl80MLAyMDEwMzECaAciCQBgAiUHlAA==)
+  last-modified (1572313233377)
+}

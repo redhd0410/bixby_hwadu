@@ -1,0 +1,54 @@
+layout-macro-def (CheckList){
+
+  params{
+    param (weatherInfo){
+      type (WeatherInfo)
+      min (Required)
+    }
+  }
+  content{
+   //section{
+      //content {
+        compound-card{
+          content{
+            hbox{
+              content{
+                for-each (weatherInfo.checkListInfo){
+                  as (CL){
+                    vbox{
+                      halign (Center)
+                      valign (Middle)
+                      content{
+                        single-line{
+                          image{
+                            background-color (Transparent)
+                            shape (Square)
+                            style(Title_XXL)
+                            url{
+                              //checkList로 변경
+                              template ("#{value(CL.itemUrl)}")
+                            }
+                          }
+                        }
+                        single-line{
+                          text{
+                            value{
+                              template ("#{value(CL.item)}")
+                            }
+                            style(Detail_M)
+                          }
+                        }
+                      }
+                    }//vbox
+                  }
+                }//for-each
+              }//hbox content
+            }//hbox
+
+          }//content
+        }//compound-card
+       //}//content
+     //}//section
+  }//outer Content
+}
+

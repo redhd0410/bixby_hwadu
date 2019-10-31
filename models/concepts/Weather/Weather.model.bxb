@@ -1,0 +1,5 @@
+enum (Weather) {
+  description (날씨)
+  symbol (weather)
+  symbol (briefing)
+}

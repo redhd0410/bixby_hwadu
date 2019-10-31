@@ -1,0 +1,3 @@
+integer (FeelsLike) {
+  description (체감 온도)
+}

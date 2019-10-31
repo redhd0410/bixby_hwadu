@@ -1,0 +1,3 @@
+integer (TMin) {
+  description (최저 기온)
+}

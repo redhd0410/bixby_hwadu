@@ -1,0 +1,3 @@
+integer (Humidity) {
+  description (습도)
+}

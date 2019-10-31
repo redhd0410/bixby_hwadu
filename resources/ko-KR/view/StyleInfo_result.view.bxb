@@ -1,0 +1,17 @@
+result-view{
+  match: StyleInfo(result)
+
+  message{
+    template ("날씨에 맞는 옷차림 정보에요.")
+  }
+
+  render{
+    layout{
+      layout-macro (StyleList){
+        param (styleInfo){
+          expression (result)
+        }
+      }
+    }
+  }//render
+}//result-view

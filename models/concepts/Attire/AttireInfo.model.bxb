@@ -1,0 +1,12 @@
+structure (AttireInfo) {
+  property (top) {
+    type (Top)
+    min (Optional) max (Many)
+  }
+
+  property (bottom){
+    type(Bottom)
+    min(Optional) max(Many)
+  }
+
+}

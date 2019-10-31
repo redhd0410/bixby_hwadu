@@ -1,0 +1,10 @@
+structure(Top) {
+  property(topName) {
+    type(TopName)
+    min(Required) max(Many)
+  }
+  property(topUrl) {
+    type(TopUrl)
+    min(Required) max(Many)
+  }
+}

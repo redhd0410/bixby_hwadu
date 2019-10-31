@@ -1,0 +1,3 @@
+integer (TC) {
+  description (현재 기온)
+}

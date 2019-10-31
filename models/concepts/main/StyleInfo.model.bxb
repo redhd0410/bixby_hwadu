@@ -1,0 +1,15 @@
+structure (StyleInfo){
+  property (attireInfo){
+    type (AttireInfo)
+    min (Required) max (Many)
+
+  }
+  property (styleImage){
+    type (StyleImage)
+    min (Optional) max (Many)
+  }
+  property (styleUrl){
+    type (StyleUrl)
+    min (Optional) max (Many)
+  }
+}

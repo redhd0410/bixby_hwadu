@@ -1,0 +1,3 @@
+integer (Rain) {
+  description (강수량)
+}

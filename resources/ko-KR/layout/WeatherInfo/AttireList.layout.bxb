@@ -1,0 +1,76 @@
+layout-macro-def (AttireList){
+
+  params{
+    param (weatherInfo){
+      type (WeatherInfo)
+      min (Required)
+    }
+  }
+  content{
+    compound-card{
+      content{
+        hbox{
+          content{
+            for-each (weatherInfo.attireInfo.top){
+              as (top){
+                vbox{
+                  halign (Center)
+                  valign (Middle)
+                  content{
+                    single-line{
+                      image{
+                        url{
+                          template ("#{value(top.topUrl)}")
+                        }
+                        style(Title_XXL)
+                      }
+                    }
+                    single-line{
+                      text{
+                        value{
+                          template ("#{value(top.topName)}")
+                        }
+                        style(Detail_L)
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        hbox{
+          content{
+            for-each (weatherInfo.attireInfo.bottom){
+              as (bottom){
+                vbox{
+                  halign (Center)
+                  valign (Middle)
+                  content{
+                    single-line{
+                      image{
+                        url{
+                          template ("#{value(bottom.bottomUrl)}")
+                        }
+                        style(Title_XXL)
+                      }
+                    }
+                    single-line{
+                      text{
+                        value{
+                          template ("#{value(bottom.bottomName)}")
+                        }
+                        style(Detail_L)
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }//hbox
+      }
+    }
+  }//outer Content
+}
+

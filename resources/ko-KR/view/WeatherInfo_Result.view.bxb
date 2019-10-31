@@ -1,0 +1,80 @@
+result-view{
+  match: WeatherInfo(result)
+
+  message{
+    template ("#{value(result.template)}")
+  }
+
+  render{
+    layout{
+      section{
+        content{
+          hbox{
+            content{
+              vbox{
+                content{
+                  text{
+                    value{
+                      template ("#{value(result.today)}")
+                    }
+                    style(Detail_M_Soft)
+                  }
+                }
+              }//vbox
+              if (result.alert != 'N'){
+                vbox{
+                  content{
+                    text{
+                      value{
+                        template ("#{value(result.alert)}")
+                      }
+                    }
+                  }
+                }//vbox
+              }
+            }
+          }//hbox
+          layout-macro (SimpleWeatherList){
+            param (weatherInfo){
+              expression (result)
+            }
+          }
+          title-area{
+            slot1{
+              text{
+                value{
+                  template ("체크 리스트")
+                }
+                style(Title_S)
+              }
+            }
+          }//title-area
+          layout-macro (CheckList){
+            param (weatherInfo){
+              expression (result)
+            }
+          }//AttireList2
+          layout-macro (AttireList){
+            param (weatherInfo){
+              expression (result)
+            }
+          }
+          if (exists(result.rain)){
+            layout-macro (WeatherList){
+              param (weatherInfo){
+                expression (result)
+              }
+            }
+            attribution-link{
+              label{
+                template ("기상청에서 더 보기")
+              }
+              url ("https://m.weather.naver.com/")
+            }
+          }
+
+        }//section-content
+      }//section
+    }//layout
+  }//render
+}//result-view

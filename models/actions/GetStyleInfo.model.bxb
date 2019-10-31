@@ -1,0 +1,33 @@
+action (GetStyleInfo) {
+  description (URL을 통하여 app-lauch를 실행하는 action입니다)
+  type(Constructor)
+  collect {
+    input (style) {
+      type(Style)
+      min (Required) max(One)
+    }
+    input (date) {
+      type(Date)
+      min (Optional) max(One)
+    }
+    input (temperature){
+      type (Temperature)
+      min (Optional) max (Many)
+    }
+    computed-input (point) {
+      min (Required) max(One)
+      type (Point)
+
+      compute {
+        if ($user.currentLocation.$exists) {
+          intent {
+            goal: geo.CurrentLocation
+            value-set: geo.CurrentLocation { $expr ($user.currentLocation) }
+            route: geo.CurrentLocation
+          } 
+        }
+      }
+    }
+  }
+  output (StyleInfo)
+}

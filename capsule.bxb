@@ -1,0 +1,39 @@
+capsule {
+  id (hwadu.perfectday)
+  version (0.2.0)
+  format (3)
+  targets {
+    target (bixby-mobile-ko-KR)
+  }
+
+  store-sections{
+    section (Weather)
+  }
+
+  capsule-imports{
+    import (viv.core) {
+      as (core)
+    }
+    import (viv.geo){
+      as (geo)
+      version (9.21.0)
+    }
+    import(viv.time) {
+      as (time)
+      version (3.0.3)
+    }
+  }
+
+  runtime-flags {
+    use-input-views-for-selection-list-detail
+    concepts-inherit-super-type-features
+    modern-prompt-rejection
+    support-halt-effect-in-computed-inputs
+    no-filtering-with-validation
+    modern-default-view-behavior
+  }
+
+  permissions {
+    user-profile-access
+  }
+}

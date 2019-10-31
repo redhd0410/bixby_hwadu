@@ -1,0 +1,3 @@
+text (WeatherUrl) {
+  description (이미지 url)
+}

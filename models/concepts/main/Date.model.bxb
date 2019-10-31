@@ -1,0 +1,6 @@
+enum (Date) {
+  description (날짜)
+  symbol (today)
+  symbol (yesterday)
+  symbol (tomorrow)
+}

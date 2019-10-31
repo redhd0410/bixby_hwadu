@@ -1,0 +1,10 @@
+structure (CheckListInfo){
+  property (item){
+    type (Item)
+    min (Required) max (One)
+  }
+  property (itemUrl){
+    type (ItemUrl)
+    min (Required) max (One)
+  }
+}

@@ -1,0 +1,123 @@
+layout-macro-def (StyleList){
+
+  params{
+    param (styleInfo){
+      type (StyleInfo)
+      min (Required)
+    }
+  }
+  content{
+    section{
+      content{
+        compound-card{
+          content{
+            hbox{
+              content{
+                for-each (styleInfo.attireInfo.top){
+                  as (top){
+                    vbox{
+                      halign (Center)
+                      valign (Middle)
+                      content{
+                        single-line{
+                          image{
+                            url{
+                              template ("#{value(top.topUrl)}")
+                            }
+                            style(Title_XXL)
+                          }
+                        }
+                        single-line{
+                          text{
+                            value{
+                              template ("#{value(top.topName)}")
+                            }
+                            style(Detail_L)
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            hbox{
+              content{
+                for-each (styleInfo.attireInfo.bottom){
+                  as (bottom){
+                    vbox{
+                      halign (Center)
+                      valign (Middle)
+                      content{
+                        single-line{
+                          image{
+                            url{
+                              template ("#{value(bottom.bottomUrl)}")
+                            }
+                            style(Title_XXL)
+                          }
+                        }
+                        single-line{
+                          text{
+                            value{
+                              template ("#{value(bottom.bottomName)}")
+                            }
+                            style(Detail_L)
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }//hbox
+          }
+        }//compound-card
+        compound-card{
+          content{
+            hbox{
+              content{
+                for-each (styleInfo.styleImage){
+                  as(image){
+                    vbox{
+                      content{
+                        single-line{
+                          image{
+                            url("#{value(image)}")
+                            style(Title_XXL)
+                          }
+                        }
+                      }
+                    }//vbox
+                  }
+                }
+              }
+            }//hbox
+            hbox{
+              content{
+                vbox{
+                  halign (Start)
+                  content{
+                    text{
+                      value{
+                        template ("출처: 스타일쉐어 OOTD")
+                      }
+                      style(Detail_M_Soft)
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }//compound-card
+        attribution-link{
+          label{
+            template ("더 많은 사람들의 데일리룩을 보고 싶다면?")
+          }
+          url ("#{value(styleInfo.styleUrl)}")
+        }
+      }
+    }//section
+  }//outer Content
+}
+

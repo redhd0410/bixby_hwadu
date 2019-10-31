@@ -1,0 +1,5 @@
+train (t-5l15vkp9euwaxduoewqfq5m1j) {
+  utterance ("[g:WeatherInfo] (내일)[v:Date:tomorrow] (날씨)[v:Weather:weather] 궁금해")
+  plan (Y2BhkMkoT0wp1StILUpLTS5JSazUC09NLMlILfLMS8tnUMeQdU8tCcnPzS8qyi9HViiKodAlsSSVQQKX6QzMDIwMTECSAUiDIASA+GBRAA==)
+  last-modified (1572525241720)
+}

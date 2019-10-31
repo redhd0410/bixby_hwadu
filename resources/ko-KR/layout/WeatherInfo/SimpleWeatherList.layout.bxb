@@ -1,0 +1,93 @@
+layout-macro-def (SimpleWeatherList){
+  params{
+    param (weatherInfo){
+      type (WeatherInfo)
+    }
+  }
+
+  content{
+    compound-card{
+      content{
+        hbox{
+          content{
+            vbox{
+              valign (Middle)
+              halign (Center)
+              content{
+                single-line{
+                  image{
+                    background-color (Transparent)
+                    style(Title_XXL)
+                    url{
+                      template ("#{value(weatherInfo.weatherUrl)}")
+                    }
+                  }
+                }//single-line
+                single-line{
+                  text{
+                    value{
+                      template ("#{value(weatherInfo.condition)}")
+                    }
+                    style(Detail_L)
+                  }
+                }
+              }
+            }
+            vbox{
+              valign (Middle)
+              halign (Center)
+              content{
+                single-line{
+                  text{
+                    value{
+                      template ("#{value(weatherInfo.TMax)}° / #{value(weatherInfo.TMin)}°")
+                    }
+                    style(Title_XL)
+                  }
+                }
+                single-line{
+                  text{
+                    value{
+                      template ("미세먼지")
+                    }
+                    style(Detail_L_Soft)
+                  }
+                  image{
+                    url("#{value(weatherInfo.fineDustImage)}")
+                    style(Title_XS)
+                  }
+                  text{
+                    value{
+                      template ("#{value(weatherInfo.fineDust)}")
+                    }
+                    style(Title_XS)
+                  }
+                }
+              }
+            }//vbox
+            if (exists(weatherInfo.feelsLike)){
+              vbox{
+                valign (Middle)
+                halign (Center)              
+                content{
+                  text{
+                    value{
+                      template ("체감온도")
+                    }
+                    style(Detail_L_Soft)
+                  }
+                  text{
+                    value{
+                      template ("#{value(weatherInfo.feelsLike)}°")
+                    }
+                    style(Title_XXL)
+                  }
+                }
+              }
+            }  
+          }
+        }
+      }
+    }//compound-card
+  }//content
+}

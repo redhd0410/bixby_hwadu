@@ -1,0 +1,3 @@
+integer (Humidex) {
+  description (불쾌지수)
+}

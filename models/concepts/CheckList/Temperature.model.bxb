@@ -1,0 +1,3 @@
+integer (Temperature) {
+  description (__DESCRIPTION__)
+}

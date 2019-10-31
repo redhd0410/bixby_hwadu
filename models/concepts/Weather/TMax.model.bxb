@@ -1,0 +1,3 @@
+integer (TMax) {
+  description (최고 기온)
+}

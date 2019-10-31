@@ -1,0 +1,3 @@
+integer (UV) {
+  description (자외선 지수)
+}

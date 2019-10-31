@@ -1,0 +1,10 @@
+train (t-26l3pndmdoj5m9vgqyxcxi24a) {
+  utterance ("[g:WeatherInfo] (날씨)[v:Weather:weather] 알려줘")
+  plan (Y2BmkMkoT0wp1StILUpLTS5JSazUC09NLMlILfLMS8tnkMeQdU8tQVYggUs7AxMDIxAzAElGBhBggmAA)
+  last-modified (1572327752789)
+}
+train (t-2hmzvluwot8mgpczyh8eaht8z) {
+  utterance ("[g:WeatherInfo] (브리핑)[v:Weather:briefing] 해줘")
+  plan (Y2BmkMkoT0wp1StILUpLTS5JSazUC09NLMlILfLMS8tnkMeQdU8tQVYggUs7AxMDIxAzAElGBhBggmAA)
+  last-modified (1572525300725)
+}

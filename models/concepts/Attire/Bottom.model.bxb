@@ -1,0 +1,10 @@
+structure(Bottom) {
+  property(bottomName) {
+    type(BottomName)
+    min(Optional) max(Many)
+  }
+  property(bottomUrl) {
+    type(BottomUrl)
+    min(Optional) max(Many)
+  }
+}

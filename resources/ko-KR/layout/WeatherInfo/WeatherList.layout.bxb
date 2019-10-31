@@ -1,0 +1,136 @@
+layout-macro-def (WeatherList) {
+
+  params{
+    param (weatherInfo){
+      type (WeatherInfo)
+      min (Required)
+      max (One)
+    }
+  }
+
+  content {
+    //section {
+      //content {
+        compound-card{
+          content{
+            hbox{
+              content{
+                vbox{
+                  halign (Center)
+                  content{
+                    single-line{
+                      text{
+                        value{
+                          template ("강수량")
+                        }
+                        style(Detail_L_Soft)
+                      }
+                    }
+                    single-line{
+                      text{
+                        value{
+                          template ("#{value(weatherInfo.rain)}mm")
+                        }
+                        style(Title_XS)
+                      }
+                    }
+                    }
+                  }
+                vbox{
+                  halign (Center)
+                  content{
+                    single-line{
+                      text{
+                        value{
+                          template ("습도")
+                        }
+                        style(Detail_L_Soft)
+                      }
+                    }
+                    single-line{
+                      text{
+                        value{
+                          template ("#{value(weatherInfo.humidity)}%")
+                        }
+                        style(Title_XS)
+                      }
+                    }
+                    }
+                  }
+                vbox{
+                  halign (Center)
+                  content{
+                    single-line{
+                      text{
+                        value{
+                          template ("바람")
+                        }
+                        style(Detail_L_Soft)
+                      }
+                    }
+                    single-line{
+                      text{
+                        value{
+                          template ("#{value(weatherInfo.wind)}m/s")
+                        }
+                        style(Title_XS)
+                      }
+                    }
+                    }
+                  }                                    
+                }
+              }
+            hbox{
+              content{
+                vbox{
+                  halign (Center)
+                  content{
+                    single-line{
+                      text{
+                        value{
+                          template ("불쾌지수")
+                        }
+                        style(Detail_L_Soft)
+                      }
+                    }
+                    single-line{
+                      text{
+                        value{
+                          template ("#{value(weatherInfo.humidex)}")
+                        }
+                        style(Title_XS)
+                      }
+                    }
+                    }
+                  }
+                vbox{
+                  halign (Center)
+                  content{
+                    single-line{
+                      text{
+                        value{
+                          template ("자외선지수")
+                        }
+                        style(Detail_L_Soft)
+                      }
+                    }
+                    single-line{
+                      text{
+                        value{
+                          template ("#{value(weatherInfo.UV)}")
+                        }
+                        style(Title_XS)
+                      }
+                    }
+                    }
+                  }                                                      
+                }
+              }              
+            }
+          }//compound-card
+        //}//content
+      
+      //}//section
+    }
+
+}
