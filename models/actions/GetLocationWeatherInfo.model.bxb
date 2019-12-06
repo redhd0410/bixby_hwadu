@@ -1,0 +1,19 @@
+action (GetLocationWeatherInfo) {
+  description (장소 날씨 정보를 가져옵니다.)
+  type(Search)
+  collect {
+    input (weather) {
+      type (Weather)
+      min (Required) max (One)
+    }
+    input (location) {
+      type(Location)
+      min(Required) max(One)
+    }
+    input (checkListInfo) {
+      type(CheckListInfo)
+      min(Optional) max(One)
+    }
+  }
+  output (WeatherInfo)
+}

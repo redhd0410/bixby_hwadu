@@ -1,5 +1,0 @@
-train (t-g5umrexdqwaq4frwymoqk0ynp) {
-  utterance ("[g:WeatherInfo] (날씨)[v:Weather:weather]에 맞는 (준비물)[v:CheckList] 알려줘")
-  plan (Y2BhkMkoT0wp1StILUpLTS5JSazUC09NLMlILfLMS8tnkMeQdU8tQVYghaHAOSM1Odsns7iEQQKX0QzMDIwMTECSAUiDIASA+GBRAA==)
-  last-modified (1572313327395)
-}

@@ -101,4 +101,8 @@ structure (WeatherInfo) {
     min (Optional) max (One)
   }
 
+  property(where){
+    type (Where)
+    min (Optional) max 
+  }
 }

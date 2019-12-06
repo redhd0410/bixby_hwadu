@@ -1,5 +1,0 @@
-train (t-rdw4j55rxcqwum780nu77uowj) {
-  utterance ("[g:AttireInfo] (날씨)[v:Weather:weather]에 맞는 (옷차림)[v:Attire:attire] 알려줘")
-  plan (Y2BjkM4oT0wp1StILUpLTS5JSazUcywpySxK9cxLy2eQwZAMT00syUgtAsuqY8i6p5aE5OfmFxXllyMrFMdhB4MohoRLYkkqgwQuaxlYGRgZmBiYGViALAYwGwIZGWCAGYyBsgA=)
-  last-modified (1572420250779)
-}

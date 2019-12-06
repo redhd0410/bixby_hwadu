@@ -1,18 +1,20 @@
-module.exports.function = function getWeatherInfo (weather, point, attire, checkList) {
+module.exports.function = function getLocationWeatherInfo (location, weather, checkList) {
+  const http = require('http')
   const console = require('console')
   const dates = require('dates')
+
   var weather = require('/utils/GetWeatherAPI.js')
   var attire = require('/utils/GetAttireInfo.js')
   var checkList = require('/utils/GetCheckListInfo.js')
 
-  var latitude = point.latitude
-  var longitude = point.longitude
+  var coord = weather.getCoordByAddrAPI(location)
+  var latitude = Number(coord.y).toFixed(6)
+  var longitude = Number(coord.x).toFixed(6)
 
   var yes = weather.getYesterdayWeatherAPI(latitude, longitude)
   var darksky = weather.getDarkSkyCurrentAPI(latitude, longitude)
 
   var hourly = 'https://apis.openapi.sk.com/weather/current/hourly'
-  const http = require('http')
 
   let options = {
       format: 'json', 

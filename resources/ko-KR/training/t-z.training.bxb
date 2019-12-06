@@ -1,0 +1,5 @@
+train (t-z6bw2a8iveykq34sgn518agim) {
+  utterance ("[g:WeatherInfo] (평창동)[v:Location] (날씨)[v:Weather:weather] 알려줘")
+  plan (Y2BhkMkoT0wp1StILUpLTS5JSazUC09NLMlILfLMS8tnUMeQdU8t8clPTizJzM9DViiJoRCmikEClw0MzAyMDExAkgFIgyAEgPhgUQA=)
+  last-modified (1575632127950)
+}

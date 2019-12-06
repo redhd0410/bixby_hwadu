@@ -5,8 +5,11 @@ module.exports.function = function GetTomorrowWeatherinfo(weather, point, attire
   var attire = require('/utils/GetAttireInfo.js')
   var checkList = require('/utils/GetCheckListInfo.js')
 
-  var tem = weather.getSummaryAPI(point)
-  var darksky = weather.getDarkSkyTomAPI(point)
+  var latitude = point.latitude
+  var longitude = point.longitude
+
+  var tem = weather.getSummaryAPI(latitude, longitude)
+  var darksky = weather.getDarkSkyTomAPI(latitude, longitude)
 
   var TomTMax = Math.round(tem.tomorrow.temperature.tmax)
   var TomTMin = Math.round(tem.tomorrow.temperature.tmin)

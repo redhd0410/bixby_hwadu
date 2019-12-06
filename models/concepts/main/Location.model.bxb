@@ -1,3 +1,3 @@
-structure (Location){
-  role-of (geo.NamedPoint)
+text(Location){
+  description(위치 정보)
 }

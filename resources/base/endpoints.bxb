@@ -15,6 +15,11 @@ endpoints {
        accepted-inputs (temperature, point, style)
        local-endpoint (GetStyleInfo.js)
      }     
+    
+    action-endpoint (GetLocationWeatherInfo) {
+       accepted-inputs (weather, location, checkList)
+       local-endpoint (GetLocationWeatherInfo.js)
+     }   
     // action-endpoint (__ACTION_NAME__) {
     //   accepted-inputs (__LIST_OF_ACTION_INPUTS__)
     //   remote-endpoint (__ENDPOINT_URL__) {

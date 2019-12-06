@@ -188,7 +188,7 @@ module.exports.fineDustImageByNum = function(fineDust) {
   return fineDustImage
 }
 
-module.exports.getalertAPI = function (point) {
+module.exports.getalertAPI = function (latitude, longitude) {
   var alert = "https://apis.openapi.sk.com/weather/severe/alert"
   const http = require('http')
   const console = require('console')
@@ -199,15 +199,15 @@ module.exports.getalertAPI = function (point) {
     }, 
     query: {
       'version': '2',
-      'lat': point.latitude, 
-      'lon': point.longitude
+      'lat': latitude, 
+      'lon': longitude
     }
   }
   let data = http.getUrl(alert, options)
   return data.weather.alert
 }
 
-module.exports.getYesterdayWeatherAPI = function (point) {
+module.exports.getYesterdayWeatherAPI = function (latitude, longitude) {
   var yesterday = "https://apis.openapi.sk.com/weather/yesterday"
   const http = require('http')
   const console = require('console')
@@ -218,8 +218,8 @@ module.exports.getYesterdayWeatherAPI = function (point) {
     }, 
     query: {
       'version': '2',
-      'lat': point.latitude, 
-      'lon': point.longitude
+      'lat': latitude, 
+      'lon': longitude
     }
   }
   let data = http.getUrl(yesterday, options)
@@ -235,7 +235,7 @@ module.exports.getFineDustAPI= function() {
   return JSON.parse(data).list[0]
 } 
 
-module.exports.getHumidex  = function (point) {
+module.exports.getHumidex  = function (latitude, longitude) {
   var humidex = "https://apis.openapi.sk.com/weather/index/th"
   const http = require('http')
   const console = require('console')
@@ -246,8 +246,8 @@ module.exports.getHumidex  = function (point) {
     }, 
     query: {
       'version': '2',
-      'lat': point.latitude, 
-      'lon': point.longitude
+      'lat': latitude, 
+      'lon': longitude
     }
   }
   let data = http.getUrl(humidex, options)
@@ -255,7 +255,7 @@ module.exports.getHumidex  = function (point) {
 
 }
 
-module.exports.getSummaryAPI = function (point) {
+module.exports.getSummaryAPI = function (latitude, longitude) {
   var summary = "https://apis.openapi.sk.com/weather/summary"
   const http = require('http')
   let options = {
@@ -265,8 +265,8 @@ module.exports.getSummaryAPI = function (point) {
     }, 
     query: {
       'version': '2',
-      'lat': point.latitude, 
-      'lon': point.longitude
+      'lat': latitude, 
+      'lon': longitude
     }
   }
 
@@ -276,9 +276,9 @@ module.exports.getSummaryAPI = function (point) {
 
 }
 
-module.exports.getDarkSkyCurrentAPI = function (point) {
+module.exports.getDarkSkyCurrentAPI = function (latitude, longitude) {
   const http = require('http')
-  var url = "https://api.darksky.net/forecast/d111291709f166292839ae2da3e7e49e/" + String(point.latitude) + "," + String(point.longitude)
+  var url = "https://api.darksky.net/forecast/d111291709f166292839ae2da3e7e49e/" + String(latitude) + "," + String(longitude)
   let options = {
     format: "json",
     query: {
@@ -292,10 +292,10 @@ module.exports.getDarkSkyCurrentAPI = function (point) {
   }
 }
 
-module.exports.getDarkSkyTomAPI = function (point) {
+module.exports.getDarkSkyTomAPI = function (latitude, longitude) {
   const http = require('http')
   const console = require('console')
-  var url = "https://api.darksky.net/forecast/d111291709f166292839ae2da3e7e49e/" + String(point.latitude) + "," + String(point.longitude) + ",+2400"
+  var url = "https://api.darksky.net/forecast/d111291709f166292839ae2da3e7e49e/" + String(latitude) + "," + String(longitude) + ",+2400"
   let options = {
     format: "json",
     query: {
@@ -307,4 +307,22 @@ module.exports.getDarkSkyTomAPI = function (point) {
     feelsLike: data.currently.apparentTemperature,
     uv: data.currently.uvIndex
   }
+}
+
+module.exports.getCoordByAddrAPI = function(location) {
+  const http = require('http')
+  const console = require('console')
+  var url = "https://dapi.kakao.com/v2/local/search/address.json"
+
+  let options = {
+    format: "json", 
+    headers: {
+      'Authorization': 'KakaoAK 9e4d8edbc26d23d7da31aa22eb069024'
+    },
+    query: {
+      'query': location
+    }
+  }
+  let data = http.getUrl(url, options)
+  return data.documents[0]
 }
