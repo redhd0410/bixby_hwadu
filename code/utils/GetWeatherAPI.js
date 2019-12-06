@@ -41,6 +41,9 @@ module.exports.nightUrlMaker = function (condition) {
     case "구름많고 눈":
       url = "/images/weather/cloudywithSunSnowy.png"
       break
+    case "눈": 
+      url = "/images/weather/cloudywithSunSnowy.png"
+      break
     case "구름많고 비 또는 눈":
       url = "/images/weather/nightCloudywithSunRainyorSnowy.png"
       break
@@ -89,6 +92,9 @@ module.exports.afternoonUrlMaker = function (condition) {
       url = "/images/weather/cloudywithSunRainy.png"
       break
     case "구름많고 눈":
+      url = "/images/weather/cloudywithSunSnowy.png"
+      break
+    case "눈": 
       url = "/images/weather/cloudywithSunSnowy.png"
       break
     case "구름많고 비 또는 눈":
@@ -159,6 +165,29 @@ module.exports.fineDustImage = function (fineDust) {
   return url
 }
 
+module.exports.fineDustImageByNum = function(fineDust) {
+  var fineDustImage = ""
+  var console = require('console')
+
+  if (fineDust <= 15){
+    var fineDustValueToString = "좋음"
+    var fineDustImage = "images/fineDust/1.png"
+  }
+  else if (16 <= fineDust && fineDust <= 35){
+    var fineDustValueToString = "보통"
+    var fineDustImage = "images/fineDust/2.png"
+  }
+  else if(36 <= fineDust && fineDust <= 75){
+    var fineDustValueToString = "나쁨"
+    var fineDustImage = "images/fineDust/3.png"
+  }
+  else if(76 <= fineDust){
+    var fineDustValueToString = "매우 나쁨"
+    var fineDustImage = "images/fineDust/4.png"
+  }
+  return fineDustImage
+}
+
 module.exports.getalertAPI = function (point) {
   var alert = "https://apis.openapi.sk.com/weather/severe/alert"
   const http = require('http')
@@ -226,45 +255,6 @@ module.exports.getHumidex  = function (point) {
 
 }
 
-module.exports.getUVIndex  = function(point) {
-  var uv = "https://apis.openapi.sk.com/weather/index/uv"
-  const http = require('http')
-  let options = {
-    format: "json",
-    headers: {
-      'appKey': '4f906803-1214-4bfe-94bb-45259e71fac7'
-    }, 
-    query: {
-      'version': '2',
-      'lat': point.latitude, 
-      'lon': point.longitude
-    }
-  }
-  let data = http.getUrl(uv, options)
-
-  return data.weather.wIndex
-
-}
-
-module.exports.getWinChillTempAPI = function(point) {
-  var uv = "https://apis.openapi.sk.com/weather/index/wct"
-  const http = require('http')
-  let options = {
-    format: "json",
-    headers: {
-      'appKey': '4f906803-1214-4bfe-94bb-45259e71fac7'
-    }, 
-    query: {
-      'version': '2',
-      'lat': point.latitude, 
-      'lon': point.longitude
-    }
-  }
-  let data = http.getUrl(uv, options)
-
-  return data.weather.wIndex.wctIndex[0].current.index
-}
-
 module.exports.getSummaryAPI = function (point) {
   var summary = "https://apis.openapi.sk.com/weather/summary"
   const http = require('http')
@@ -284,4 +274,37 @@ module.exports.getSummaryAPI = function (point) {
 
   return data.weather.summary[0]
 
+}
+
+module.exports.getDarkSkyCurrentAPI = function (point) {
+  const http = require('http')
+  var url = "https://api.darksky.net/forecast/d111291709f166292839ae2da3e7e49e/" + String(point.latitude) + "," + String(point.longitude)
+  let options = {
+    format: "json",
+    query: {
+      'units': 'si'
+    }
+  }
+  let data = http.getUrl(url, options)
+  return {
+    feelsLike: data.currently.apparentTemperature,
+    uv: data.currently.uvIndex
+  }
+}
+
+module.exports.getDarkSkyTomAPI = function (point) {
+  const http = require('http')
+  const console = require('console')
+  var url = "https://api.darksky.net/forecast/d111291709f166292839ae2da3e7e49e/" + String(point.latitude) + "," + String(point.longitude) + ",+2400"
+  let options = {
+    format: "json",
+    query: {
+      'units': 'si'
+    }
+  }
+  let data = http.getUrl(url, options)
+  return {
+    feelsLike: data.currently.apparentTemperature,
+    uv: data.currently.uvIndex
+  }
 }

@@ -6,6 +6,7 @@ module.exports.function = function getWeatherInfo (weather, point, attire, check
   var checkList = require('/utils/GetCheckListInfo.js')
 
   var yes = weather.getYesterdayWeatherAPI(point)
+  var darksky = weather.getDarkSkyCurrentAPI(point)
 
   var hourly = 'https://apis.openapi.sk.com/weather/current/hourly'
   const http = require('http')
@@ -41,19 +42,17 @@ module.exports.function = function getWeatherInfo (weather, point, attire, check
 
   var humidex = Math.round(weather.getHumidex(point))
 
-  var UV = Math.round(weather.getUVIndex(point).uvindex[0].day00.index)
+  var UV = Math.round(darksky.uv)
 
   var fineDust = weather.fineDustToString(Math.round(weather.getFineDustAPI(point).pm10Grade))
 
   var fineDustImage = weather.fineDustImage(fineDust)
 
-  var feelsLike = Math.round(weather.getWinChillTempAPI(point))
+  var feelsLike = Math.round(darksky.feelsLike)
 
   var yesMax = TMax - Math.round(yes.tmax)
   
   var yesMin = TMin - Math.round(yes.tmin)
-
-  var alert = weather.getalertAPI(point).length == 0 ? "N" : weather.getalertAPI(point)[0].alert60.t1
 
   var month = dates.ZonedDateTime.now().getDateTime().date.month
 
@@ -93,7 +92,6 @@ module.exports.function = function getWeatherInfo (weather, point, attire, check
     feelsLike: feelsLike,
     yesMax: yesMax, 
     yesMin: yesMin,
-    alert: alert,
     today: today, 
     weatherUrl: weatherUrl, 
     attireInfo: attireInfo,

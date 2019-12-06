@@ -6,6 +6,7 @@ module.exports.function = function GetTomorrowWeatherinfo(weather, point, attire
   var checkList = require('/utils/GetCheckListInfo.js')
 
   var tem = weather.getSummaryAPI(point)
+  var darksky = weather.getDarkSkyTomAPI(point)
 
   var TomTMax = Math.round(tem.tomorrow.temperature.tmax)
   var TomTMin = Math.round(tem.tomorrow.temperature.tmin)
@@ -16,35 +17,22 @@ module.exports.function = function GetTomorrowWeatherinfo(weather, point, attire
   var Tomorrow = dates.ZonedDateTime.now().plusDays(1).getDateTime()
   var condition = tem.tomorrow.sky.name
   var feelsLike = condition.includes("비") || condition.includes("흐") ? TomTMax - 4 : TomTMax - 1
-  var fineDust = Math.round(weather.getFineDustAPI().pm10Value24)
-  console.log(fineDust)
-  var fineDustImage=""
+  var fineDust = Math.round(Number(weather.getFineDustAPI().pm10Value24))
 
-  if (fineDust <= 15){
-    var fineDustValueToString = "좋음"
-    var fineDustImage = "images/fineDust/1.png"
-  }
-  else if (16 <= fineDust && fineDust <= 35){
-    var fineDustValueToString = "보통"
-    var fineDustImage = "images/fineDust/2.png"
-  }
-  else if(36 <= fineDust && fineDust <= 75){
-    var fineDustValueToString = "나쁨"
-    var fineDustImage = "images/fineDust/3.png"
-  }
-  else if(76 <= fineDust){
-    var fineDustValueToString = "매우 나쁨"
-    var fineDustImage = "images/fineDust/4.png"
-  }
+  var fineDustImage=weather.fineDustImageByNum(fineDust)
 
-  console.log(fineDustValueToString)
+  console.log(typeof fineDust)
+  
 
   var month = Tomorrow.date.month
   var day = Tomorrow.date.day
   var time = parseInt(Tomorrow.time.hour)
+  console.log(time)
   var weatherUrl = time <= 19 ? weather.afternoonUrlMaker(condition) : weather.nightUrlMaker(condition)
+  console.log(weatherUrl)
   var today = "내일, " + month + "월 " + day + "일"
-  var UV = Math.round(weather.getUVIndex(point).uvindex[0].day01.index)
+  
+  var UV = Math.round(darksky.uv)
 
   var checkList = checkList.getCheckListInfo(UV, condition, "", feelsLike, 0)
 
@@ -66,7 +54,7 @@ module.exports.function = function GetTomorrowWeatherinfo(weather, point, attire
     weatherUrl: weatherUrl,
     attireInfo: attireInfo,
     checkListInfo: checkList, 
-    fineDust: fineDustValueToString,
+    fineDust: String(fineDust),
     fineDustImage: fineDustImage
   }
 }
