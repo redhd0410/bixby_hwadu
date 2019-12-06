@@ -1,4 +1,3 @@
-
 module.exports.function = function getWeatherInfo (weather, point, attire, checkList) {
   const console = require('console')
   const dates = require('dates')
@@ -45,8 +44,6 @@ module.exports.function = function getWeatherInfo (weather, point, attire, check
   var UV = Math.round(weather.getUVIndex(point).uvindex[0].day00.index)
 
   var fineDust = weather.fineDustToString(Math.round(weather.getFineDustAPI(point).pm10Grade))
-
-  console.log(fineDust)
 
   var fineDustImage = weather.fineDustImage(fineDust)
 

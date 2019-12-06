@@ -31,7 +31,7 @@ module.exports.getCheckListInfo = function (UV, condition, fineDust, feelsLike, 
 
   if (feelsLike <= 5){
     item.push("방한용품")
-    url.push("/images/checkList/winACC.png")
+    url.push("/images/checkList/winterACC.png")
     item.push("장판 끄기")
     url.push("/images/checkList/off.png")
   } 

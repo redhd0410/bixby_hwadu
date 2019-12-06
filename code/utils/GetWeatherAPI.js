@@ -200,8 +200,9 @@ module.exports.getYesterdayWeatherAPI = function (point) {
 module.exports.getFineDustAPI= function() {
   const http = require('http')
   const console = require('console')
-  var fineDustAPI = "http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty?pageNo=1&numOfRows=10&sidoName=서울&ServiceKey=2%2BERPeB3MlX%2BmFZQPy3N7BjsDmykveN4abcFaN1mEOFTxSuIFIiuvQ50l9nCV8%2FuWzra9ubQ1GcJWvfAFfqoKA%3D%3D&ver=1.3&_returnType=json"
+  var fineDustAPI = "http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty?pageNo=1&numOfRows=10&sidoName=서울&ServiceKey=EkJJRIxpCJ4%2Bp8ghWWJnVHX9ITH%2FnknfHKx%2FlvsyxfvMgV6aX4AvYC8eKjzgi43qHHoIZ4zTd%2Bz13EHufjLWKQ%3D%3D&ver=1.3&_returnType=json"
   let data = http.getUrl(fineDustAPI)
+  console.log(data)
   return JSON.parse(data).list[0]
 } 
 
