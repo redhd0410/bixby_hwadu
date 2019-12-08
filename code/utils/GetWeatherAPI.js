@@ -50,6 +50,9 @@ module.exports.nightUrlMaker = function (condition) {
     case "흐림":
       url = "/images/weather/cloudy.png"
       break
+    case "비":
+      url = "/images/weather/cloudyRainy.png"
+      break
     case "흐리고 비":
       url = "/images/weather/cloudyRainy.png"
       break
@@ -102,6 +105,9 @@ module.exports.afternoonUrlMaker = function (condition) {
       break
     case "흐림":
       url = "/images/weather/cloudy.png"
+      break
+    case "비":
+      url = "/images/weather/cloudyRainy.png"
       break
     case "흐리고 비":
       url = "/images/weather/cloudyRainy.png"

@@ -23,16 +23,12 @@ module.exports.function = function GetTomorrowWeatherinfo(weather, point, attire
   var fineDust = Math.round(Number(weather.getFineDustAPI().pm10Value24))
 
   var fineDustImage=weather.fineDustImageByNum(fineDust)
-
-  console.log(typeof fineDust)
-  
-
   var month = Tomorrow.date.month
   var day = Tomorrow.date.day
   var time = parseInt(Tomorrow.time.hour)
-  console.log(time)
+
   var weatherUrl = time <= 19 ? weather.afternoonUrlMaker(condition) : weather.nightUrlMaker(condition)
-  console.log(weatherUrl)
+  console.log(condition)
   var today = "내일, " + month + "월 " + day + "일"
   
   var UV = Math.round(darksky.uv)
