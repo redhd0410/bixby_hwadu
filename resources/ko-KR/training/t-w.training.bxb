@@ -1,5 +1,5 @@
 train (t-whsupqzpxesxd9mc3ltd40c3m) {
   utterance ("[g:WeatherInfo] (오늘)[r:GetWeatherInfo] (날씨)[v:Weather:weather] 어때?")
   plan (Y2BmkMkoT0wp1StILUpLTS5JSazUC09NLMlILfLMS8tnkMeQdU8tQVYggUs7AxMDIxAzAElGBhBgBmKQGAMA)
-  last-modified (1575808111349)
+  last-modified (1575876214796)
 }
