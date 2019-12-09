@@ -7,7 +7,7 @@ action (GetLocationWeatherInfo) {
       min (Required) max (One)
     }
     input (location) {
-      type(Location)
+      type(geo.GeoPoint)
       min(Required) max(One)
     }
     input (checkListInfo) {

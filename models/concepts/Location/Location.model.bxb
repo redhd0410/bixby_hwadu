@@ -1,3 +1,3 @@
-text(Location){
+name(Location){
   description(위치 정보)
 }

@@ -1,0 +1,5 @@
+train (t-a8ilubysz4khc2e7ovwkijmh5) {
+  utterance ("[g:GetLocationWeatherInfo] (평창동)[v:geo.SearchTerm] (날씨)[v:Weather:weather] 찾아줘")
+  plan (dYw/C8JQDMSv1aqj6KLg3u19BycRRAQF50eb/hnayGva4uJnN8UWBTVLcr/cHWbYZK2Na3Mjl1Aksb2bK1nJyO3LhBF+fXckB46s5Fx+Glf/ajBv8sakxJrkE+elYDGQoy0ofrHlwLa1cFWnKVWC9Q/4aLWU3h1nsi7KLuQKTOHBxwhjBJiogmqv14Fe3fj9hvLOra4n)
+  last-modified (1575871941616)
+}

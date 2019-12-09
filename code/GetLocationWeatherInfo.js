@@ -7,9 +7,8 @@ module.exports.function = function getLocationWeatherInfo (location, weather, ch
   var attire = require('/utils/GetAttireInfo.js')
   var checkList = require('/utils/GetCheckListInfo.js')
 
-  var coord = weather.getCoordByAddrAPI(location)
-  var latitude = Number(coord.y).toFixed(6)
-  var longitude = Number(coord.x).toFixed(6)
+  var latitude = location.latitude
+  var longitude = location.longitude
 
   var yes = weather.getYesterdayWeatherAPI(latitude, longitude)
   var darksky = weather.getDarkSkyCurrentAPI(latitude, longitude)
