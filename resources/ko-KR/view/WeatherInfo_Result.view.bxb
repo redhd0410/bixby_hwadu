@@ -71,13 +71,8 @@ result-view{
               }
               url ("https://m.weather.naver.com/")
             }
-            attribution-link{
-              label {
-                template ("오늘의 스타일 보러가기")
-              }
-              url ("https://www.styleshare.kr/feed/dailylook")
-            }
           }
+
         }//section-content
       }//section
     }//layout
