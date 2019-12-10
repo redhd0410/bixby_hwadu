@@ -74,13 +74,13 @@ module.exports = [
     },
     topUrls: {
       topUrl1:"/images/attire/JK.png",
-      topUrl2:"/images/attire/SH.png",
+      topUrl2:"/images/attire/longSH.png",
       topUrl3:"/images/attire/CD.png",
       topUrl4:"/images/attire/miliJK.png",
     }, 
     bottomUrls:{
       bottomUrl1:"/images/attire/denim.png",
-      bottomUrl2:"/images/attire/PT.png",
+      bottomUrl2:"/images/attire/P.png",
       bottomUrl3:"/images/attire/SL.png",
       bottomUrl4:"/images/attire/SS.png",
     }
