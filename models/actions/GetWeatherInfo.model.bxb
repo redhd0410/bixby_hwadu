@@ -10,6 +10,10 @@ action (GetWeatherInfo) {
       type(Date)
       min(Optional) max(One)
     }
+    input (question){
+      type(Question)
+      min(Required) max(One)
+    }
     input (location) {
       type (geo.NamedPoint)
       min (Optional) max (One)

@@ -1,0 +1,5 @@
+train (t-kcn6f2sl6edi0syeqv59zml99) {
+  utterance ("[g:WeatherInfo] 오늘 (날씨)[v:Weather:weather] (알려줘)[v:Question:find]")
+  plan (Y2BhkMkoT0wp1StILUpLTS5JSazUC09NLMlILfLMS8tnUMeQdU8tCcnPzS8qyi9HViiJoTCwNLW4JDM/j0EClw0MzAyMDExAkgFIgyAEgPhgUQA=)
+  last-modified (1576037969919)
+}

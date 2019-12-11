@@ -103,6 +103,6 @@ structure (WeatherInfo) {
 
   property(where){
     type (Where)
-    min (Optional) max 
+    min (Optional) max (One)
   }
 }

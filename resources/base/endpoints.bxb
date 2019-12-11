@@ -2,22 +2,22 @@ endpoints {
   action-endpoints {
     // Uncomment the lines below and enter the information for actions, inputs, and the appropriate local or remote endpoints
     action-endpoint (GetWeatherInfo) {
-       accepted-inputs (weather, point, date, checkList)
+       accepted-inputs (weather, point, date, checkList, question)
        local-endpoint (GetWeatherInfo.js)
      }
 
     action-endpoint (GetTomorrowWeatherInfo) {
-       accepted-inputs (weather, point, date, checkList)
+       accepted-inputs (weather, point, date, checkList, question)
        local-endpoint (GetTomorrowWeatherInfo.js)
      }
 
     action-endpoint (GetStyleInfo) {
-       accepted-inputs (temperature, point, style)
+       accepted-inputs (temperature, point, style, question)
        local-endpoint (GetStyleInfo.js)
      }     
     
     action-endpoint (GetLocationWeatherInfo) {
-       accepted-inputs (weather, location, checkList)
+       accepted-inputs (weather, location, checkList, question)
        local-endpoint (GetLocationWeatherInfo.js)
      }   
     // action-endpoint (__ACTION_NAME__) {

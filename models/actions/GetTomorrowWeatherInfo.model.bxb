@@ -8,6 +8,10 @@ action (GetTomorrowWeatherInfo) {
     }
     input (date) {
       type(Date)
+      min(Optional) max (One)
+    }
+    input (question){
+      type(Question)
       min(Required) max(One)
     }
     input (checkListInfo) {

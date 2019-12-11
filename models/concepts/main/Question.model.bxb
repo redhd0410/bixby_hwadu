@@ -1,0 +1,5 @@
+enum (Question) {
+  description (날짜)
+  symbol (find)
+  symbol (recommend)
+}

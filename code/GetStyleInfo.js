@@ -1,4 +1,4 @@
-module.exports.function = function getStlyeInfo(temperature, style, point) {
+module.exports.function = function getStlyeInfo(temperature, style, point, question) {
   const console = require('console')
   const dates = require('dates')
   var weather = require('/utils/GetWeatherAPI.js')

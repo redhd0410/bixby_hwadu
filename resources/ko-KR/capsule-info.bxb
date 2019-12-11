@@ -4,9 +4,11 @@ capsule-info {
   developer-name (화두)
   icon-asset (/images/PDLogo.png)
   description (날씨에 맞는 옷차림과 준비물을 알려주는 서비스)
-  website-url (https://example.com/)
   terms-url (https://example.com/terms-of-use/)
   search-keywords {
-    keyword (Example)
+    keyword (완벽한 하루)
+    keyword (완벽한하루)
+    keyword (날씨)
+
   }
 }

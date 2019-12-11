@@ -3,4 +3,7 @@ enum (Date) {
   symbol (today)
   symbol (yesterday)
   symbol (tomorrow)
+  features{
+  transient
+  }
 }

@@ -1,4 +1,4 @@
-module.exports.function = function getLocationWeatherInfo (location, weather, checkList) {
+module.exports.function = function getLocationWeatherInfo (location, weather, checkList, question) {
   const http = require('http')
   const console = require('console')
   const dates = require('dates')

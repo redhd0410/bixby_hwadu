@@ -1,4 +1,4 @@
-module.exports.function = function getWeatherInfo (weather, point, attire, checkList) {
+module.exports.function = function getWeatherInfo (weather, point, attire, checkList, question, date) {
   const console = require('console')
   const dates = require('dates')
   var weather = require('/utils/GetWeatherAPI.js')

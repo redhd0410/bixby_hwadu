@@ -10,6 +10,10 @@ action (GetLocationWeatherInfo) {
       type(geo.GeoPoint)
       min(Required) max(One)
     }
+    input (question){
+      type(Question)
+      min(Required) max(One)
+    }
     input (checkListInfo) {
       type(CheckListInfo)
       min(Optional) max(One)
