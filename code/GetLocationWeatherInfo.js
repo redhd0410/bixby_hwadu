@@ -66,6 +66,7 @@ module.exports.function = function getLocationWeatherInfo (location, weather, ch
 
   var today = "오늘, " + month + "월 " + day + "일"
   
+  console.log(location)
   var template = weather.templateMaker("오늘","어제",TMax, TMin, yesMax, yesMin)
 
   var weatherUrl = time <= 19 ? weather.afternoonUrlMaker(condition) : weather.nightUrlMaker(condition)
@@ -100,6 +101,7 @@ module.exports.function = function getLocationWeatherInfo (location, weather, ch
     weatherUrl: weatherUrl, 
     attireInfo: attireInfo,
     checkListInfo: checkList,
-    template: template
+    template: template, 
+    where: location.userFriendlyName
   }
 }

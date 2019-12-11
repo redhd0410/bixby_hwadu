@@ -1,5 +1,5 @@
 train (t-4neqbypgr9lsr43urqoix75an) {
   utterance ("[g:WeatherInfo] (내일)[v:Date:tomorrow] (날씨)[v:Weather:weather] (알려줘)[v:Question:find]")
   plan (Y2BlkMkoT0wp1StILUpLTS5JSazUC09NLMlILfLMS8tnUMeQdU8tCcnPzS8qyi9HViiKodAlsSSVQRJDOLA0tbgkMz+PQQKXxQwsDIwMTAzMQJoByIJAGACJQeUA)
-  last-modified (1576037986938)
+  last-modified (1576047490930)
 }

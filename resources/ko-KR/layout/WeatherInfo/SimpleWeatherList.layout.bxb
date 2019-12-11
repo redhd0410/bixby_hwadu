@@ -31,6 +31,14 @@ layout-macro-def (SimpleWeatherList){
                     style(Detail_L)
                   }
                 }
+                single-line{
+                  text {
+                    value{
+                      template("#{value(weatherInfo.where)}")
+                    }
+                    style(Detail_M)
+                  }
+                }
               }
             }
             vbox{
